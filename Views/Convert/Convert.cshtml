@@ -1,7 +1,7 @@
-﻿@model NumbersFun.Models.Number
+﻿@*@model NumbersFun.Models.Number
 @{
     ViewData["Title"] = "Home Page";
-}
+}*@
 
 <div class="text-center">
     <h1 class="display-4">Welcome to Numbers Fun</h1>
@@ -9,19 +9,19 @@
     <div class="d-flex justify-content-center align-items-center" style="height: 45vh">
         <form asp-action="ConvertNumbers" asp-controller="Convert" method="post">
             <label>Convert This Number</label>
-            <input type="text" class="form-control" name="numberToConvert" placeholder="Input number here"/>
+            <input type="text" class="form-control" name="numberToConvert" placeholder="Input number here" />
             <input type="submit" class="btn btn-primary" value="Convert" />
         </form>
     </div>
-  
+
 </div>
 
-@{ 
+@{
     if (ViewBag.number != null)
     {
         <div class="text-center">
             <h3>
-                @ViewBag.number
+                @*@ViewBag.numOnes*@
                 @ViewBag.word
             </h3>
         </div>
