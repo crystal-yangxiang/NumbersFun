@@ -8,8 +8,8 @@
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [Deployment](#hosted-by-Azure)
-  - [Interact with solution](#steps)
+  - [Deployment](#deployment)
+  - [Interact with solution](#interact-with-solution)
   - [Continued development](#continued-development)
 - [Author](#author)
 
@@ -45,7 +45,7 @@ Users should be able to:
 
 ### Deployment
 
-Deployed and hosted by Azure App Services
+- Deployed and hosted by Azure App Services
 
 - URL: (https://numbersfun.azurewebsites.net/)
 
