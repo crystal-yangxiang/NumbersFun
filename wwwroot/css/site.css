@@ -18,6 +18,8 @@ a {
   border-color: #1861ac;
 }
 
+
+
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   color: #fff;
   background-color: #1b6ec2;
@@ -59,8 +61,12 @@ html {
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    /* background-image: url("../images/numbers.jpg");*/
+    background-image: url("../images/number1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 60px;
 }
 .footer {
   position: absolute;
