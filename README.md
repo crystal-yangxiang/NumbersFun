@@ -8,13 +8,11 @@
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
+  - [Deployment](#hosted-by-Azure)
+  - [Interact with solution](#steps)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -32,7 +30,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: (https://numbersfun.azurewebsites.net/)
-- GitHub: 
+- GitHub: (https://github.com/crystal-yangxiang/NumbersFun)
 
 ## My process
 
@@ -45,42 +43,31 @@ Users should be able to:
 - [React](https://reactjs.org/) - JS library
 - [jQuery.js](https://nextjs.org/) - React framework
 
+### Deployment
+
+Deployed and hosted by Azure App Services
+
+- URL: (https://numbersfun.azurewebsites.net/)
 
 
-### What I learned
+### Interact with solution
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+- Users click Home, Privacy and Contact in the navigation bar to navigate Home, Privacy, and Contact pages
+- Enter numercial input into textbox located in the concert of the web page
+- Click Convert button below the textbox
+- A string output parameter will be outputted below
 
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
+Whole numbers 1-9 and tens numbers 10 - 90 can be converted into string output parameters.
+Need to countinue developing functionlity as required.
 
 
 
 ## Author
 
-- Website - [Yang Xiang](https://www.your-site.com)
+- [Yang Xiang] 
 
 
 
