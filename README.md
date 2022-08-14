@@ -27,7 +27,7 @@ Users should be able to:
 
 ### Screenshot
 
-![Screenshot (66)](https://user-images.githubusercontent.com/93811704/184530913-e75112a3-f831-452e-9943-a35f12f7d80e.png)
+![image](https://user-images.githubusercontent.com/93811704/184531030-0d714b12-b237-412d-afce-1408a77154e1.png)
 
 ### Links
 
