@@ -60,8 +60,9 @@ Users should be able to:
 
 ### Continued development
 
-Whole numbers 1-9 and tens numbers 10 - 90 can be converted into string output parameters.
-Need to countinue developing functionlity as required.
+- Whole numbers 1-9 and tens numbers 10 - 90 can be converted into string output parameters.
+- Need to countinue developing functionlity as required.
+- Built and run Unit Testing for testing purpose.
 
 
 
