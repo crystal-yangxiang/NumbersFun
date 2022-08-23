@@ -7,8 +7,9 @@ namespace NumbersFun.Models
 {
     public class Number
     {
-        public double Num { get; set; }
+        public double Ones { get; set; }
 
+        public double Tens { get; set; }
         public string Word { get; set; }
 
     }
