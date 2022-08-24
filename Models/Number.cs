@@ -123,18 +123,18 @@ namespace NumbersFun.Models
             try
             {
                 // eg.0120 check begin with zero or not   
-                bool beginsZero = false; 
-                bool isFinished = false;    
+                bool beginsZero = false;
+                bool isFinished = false;
                 double dblAmt = (Convert.ToDouble(number));
-                   
+
                 if (dblAmt > 0)
-                {  
+                {
                     beginsZero = number.StartsWith("0");
 
                     int numberLength = number.Length;
                     //start position from 0
-                    int pos = 0;    
-                    string place = "";   
+                    int pos = 0;
+                    string place = "";
                     switch (numberLength)
                     {
                         case 1://ones' range    
@@ -146,26 +146,26 @@ namespace NumbersFun.Models
                             word = tens(number);
                             isFinished = true;
                             break;
-                        case 3:   
+                        case 3:
                             pos = (numberLength % 3) + 1;
                             place = " Hundred ";
                             break;
                         // case 4 -6 : thousands because thousand will be anohter 3 digital block
-                        case 4: 
+                        case 4:
                         case 5:
                         case 6:
                             pos = (numberLength % 4) + 1;
                             place = " Thousand ";
                             break;
                         // case 7-9: Millions
-                        case 7:  
+                        case 7:
                         case 8:
                         case 9:
                             pos = (numberLength % 7) + 1;
                             place = " Million ";
                             break;
                         // case 10 - 12 billion
-                        case 10:   
+                        case 10:
                         case 11:
                         case 12:
                             pos = (numberLength % 10) + 1;
@@ -177,7 +177,7 @@ namespace NumbersFun.Models
                             break;
                     }
                     if (!isFinished)
-                    {   
+                    {
                         if (number.Substring(0, pos) != "0" && number.Substring(pos) != "0")
                         {
                             try
@@ -189,15 +189,55 @@ namespace NumbersFun.Models
                         else
                         {
                             word = ConvertWholeNumber(number.Substring(0, pos)) + ConvertWholeNumber(number.Substring(pos));
-                        }  
+                        }
                     }
-                       
+
                     if (word.Trim().Equals(place.Trim())) word = "";
                 }
             }
             catch { }
             return word.Trim();
         }
+
+       public static string decimalValue(string number)
+        {
+            string wholeNumber = number;
+            string andString = null;
+            string pointString = null;
+            string points= null;
+            string text = "";
+
+            int afterPoint = number.IndexOf(".");
+            if (afterPoint > 0 )
+            {
+                wholeNumber = number.Substring(0, afterPoint);
+                points = number.Substring(afterPoint + 1);
+                if (Convert.ToInt32(points)>0)
+                {
+                    andString = "and";
+                }
+            }
+            text = string.Format("{0}{1}{2}", ConvertWholeNumber(wholeNumber), andString, pointString);
+            return text;
+            
+        }
+
+        public static string ConvertFullNumber(string number)
+        {
+            string text = "";
+            string digits = null;
+            string val = null;
+
+            for (int i = 0; i < number.Length; i++)
+            {
+                digits = number[i].ToString();
+                if (digits.Equals("0"))
+                {
+                    val = "Zero";
+                }
+            }
+        }
+        
     }
 }
 
