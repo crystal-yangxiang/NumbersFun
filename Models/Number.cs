@@ -9,186 +9,186 @@ namespace NumbersFun.Models
     {
         public string EndWord { get; set; }
 
-        public static string ones(string Number)
+        public static string ones(string number)
         {
-            int _Number = Convert.ToInt32(Number);
-            string name = "";
-            switch (_Number)
+            int num = Convert.ToInt32(number);
+            string word = "";
+            switch (num)
             {
 
                 case 1:
-                    name = "One";
+                    word = "One";
                     break;
                 case 2:
-                    name = "Two";
+                    word = "Two";
                     break;
                 case 3:
-                    name = "Three";
+                    word = "Three";
                     break;
                 case 4:
-                    name = "Four";
+                    word = "Four";
                     break;
                 case 5:
-                    name = "Five";
+                    word = "Five";
                     break;
                 case 6:
-                    name = "Six";
+                    word = "Six";
                     break;
                 case 7:
-                    name = "Seven";
+                    word = "Seven";
                     break;
                 case 8:
-                    name = "Eight";
+                    word = "Eight";
                     break;
                 case 9:
-                    name = "Nine";
+                    word = "Nine";
                     break;
             }
-            return name;
+            return word;
         }
 
-        public static string tens(string Number)
+        public static string tens(string number)
         {
-            int _Number = Convert.ToInt32(Number);
-            string name = null;
-            switch (_Number)
+            int num = Convert.ToInt32(number);
+            string word = null;
+            switch (num)
             {
                 case 10:
-                    name = "Ten";
+                    word = "Ten";
                     break;
                 case 11:
-                    name = "Eleven";
+                    word = "Eleven";
                     break;
                 case 12:
-                    name = "Twelve";
+                    word = "Twelve";
                     break;
                 case 13:
-                    name = "Thirteen";
+                    word = "Thirteen";
                     break;
                 case 14:
-                    name = "Fourteen";
+                    word = "Fourteen";
                     break;
                 case 15:
-                    name = "Fifteen";
+                    word = "Fifteen";
                     break;
                 case 16:
-                    name = "Sixteen";
+                    word = "Sixteen";
                     break;
                 case 17:
-                    name = "Seventeen";
+                    word = "Seventeen";
                     break;
                 case 18:
-                    name = "Eighteen";
+                    word = "Eighteen";
                     break;
                 case 19:
-                    name = "Nineteen";
+                    word = "Nineteen";
                     break;
                 case 20:
-                    name = "Twenty";
+                    word = "Twenty";
                     break;
                 case 30:
-                    name = "Thirty";
+                    word = "Thirty";
                     break;
                 case 40:
-                    name = "Fourty";
+                    word = "Fourty";
                     break;
                 case 50:
-                    name = "Fifty";
+                    word = "Fifty";
                     break;
                 case 60:
-                    name = "Sixty";
+                    word = "Sixty";
                     break;
                 case 70:
-                    name = "Seventy";
+                    word = "Seventy";
                     break;
                 case 80:
-                    name = "Eighty";
+                    word = "Eighty";
                     break;
                 case 90:
-                    name = "Ninety";
+                    word = "Ninety";
                     break;
                 default:
-                    if (_Number > 0)
+                    if (num > 0)
                     {
-                        name = tens(Number.Substring(0, 1) + "0") + " " + ones(Number.Substring(1));
+                        word = tens(number.Substring(0, 1) + "0") + " " + ones(number.Substring(1));
                     }
                     break;
             }
-            return name;
+            return word;
         }
 
-        public static string ConvertWholeNumber(string Number)
+        public static string ConvertWholeNumber(string number)
         {
             string word = "";
             try
             {
                 // eg.0120 check begin with zero or not   
                 bool beginsZero = false; 
-                bool isDone = false;    
-                double dblAmt = (Convert.ToDouble(Number));
+                bool isFinished = false;    
+                double dblAmt = (Convert.ToDouble(number));
                    
                 if (dblAmt > 0)
                 {  
-                    beginsZero = Number.StartsWith("0");
+                    beginsZero = number.StartsWith("0");
 
-                    int numDigits = Number.Length;
+                    int numberLength = number.Length;
                     //start position from 0
                     int pos = 0;    
                     string place = "";   
-                    switch (numDigits)
+                    switch (numberLength)
                     {
                         case 1://ones' range    
 
-                            word = ones(Number);
-                            isDone = true;
+                            word = ones(number);
+                            isFinished = true;
                             break;
                         case 2://tens' range    
-                            word = tens(Number);
-                            isDone = true;
+                            word = tens(number);
+                            isFinished = true;
                             break;
                         case 3:   
-                            pos = (numDigits % 3) + 1;
+                            pos = (numberLength % 3) + 1;
                             place = " Hundred ";
                             break;
                         // case 4 -6 : thousands because thousand will be anohter 3 digital block
                         case 4: 
                         case 5:
                         case 6:
-                            pos = (numDigits % 4) + 1;
+                            pos = (numberLength % 4) + 1;
                             place = " Thousand ";
                             break;
                         // case 7-9: Millions
                         case 7:  
                         case 8:
                         case 9:
-                            pos = (numDigits % 7) + 1;
+                            pos = (numberLength % 7) + 1;
                             place = " Million ";
                             break;
                         // case 10 - 12 billion
                         case 10:   
                         case 11:
                         case 12:
-                            pos = (numDigits % 10) + 1;
+                            pos = (numberLength % 10) + 1;
                             place = " Billion ";
                             break;
                         //add extra case options for anything above Billion...    
                         default:
-                            isDone = true;
+                            isFinished = true;
                             break;
                     }
-                    if (!isDone)
+                    if (!isFinished)
                     {   
-                        if (Number.Substring(0, pos) != "0" && Number.Substring(pos) != "0")
+                        if (number.Substring(0, pos) != "0" && number.Substring(pos) != "0")
                         {
                             try
                             {
-                                word = ConvertWholeNumber(Number.Substring(0, pos)) + place + ConvertWholeNumber(Number.Substring(pos));
+                                word = ConvertWholeNumber(number.Substring(0, pos)) + place + ConvertWholeNumber(number.Substring(pos));
                             }
                             catch { }
                         }
                         else
                         {
-                            word = ConvertWholeNumber(Number.Substring(0, pos)) + ConvertWholeNumber(Number.Substring(pos));
+                            word = ConvertWholeNumber(number.Substring(0, pos)) + ConvertWholeNumber(number.Substring(pos));
                         }  
                     }
                        
