@@ -17,11 +17,21 @@ namespace NumbersFun.Controllers
         {
             _logger = logger;
         }
+        
 
-
+        [Route("/")]
         public IActionResult Index()
         {
             return View();
+        }
+
+        [Route("/numberPage")]
+        public IActionResult ConvertWholeNumber(string number)
+        {
+            Number newNum = new Number();
+            newNum.EndWord = Number.ConvertWholeNumber(number);
+            return View(newNum);
+            
         }
 
         public IActionResult Privacy()
@@ -39,5 +49,7 @@ namespace NumbersFun.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+         
     }
 }

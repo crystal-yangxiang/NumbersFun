@@ -1,0 +1,29 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to Numbers Fun</h1>
+
+    <div class="d-flex justify-content-center align-items-center" style="font-size:30px; height: 40vh">
+        <form action="/numberPage" method="post">
+            <label for="number">Convert This Number</label>
+            <input id="number" type="text" class="form-control" name="number" placeholder="Input number here" />
+            <input type="submit" class="btn btn-primary" value="Convert" />
+        </form>
+    </div>
+
+</div>
+
+@{
+//if (ViewBag.number != null)
+//{
+        <div class="text-center">
+            <h3>@Model.EndWord dollars</h3>
+        </div>
+    
+
+
+}
