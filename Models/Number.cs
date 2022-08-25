@@ -90,7 +90,7 @@ namespace NumbersFun.Models
                     word = "Thirty";
                     break;
                 case 40:
-                    word = "Fourty";
+                    word = "Forty";
                     break;
                 case 50:
                     word = "Fifty";
