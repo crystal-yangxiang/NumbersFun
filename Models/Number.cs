@@ -148,28 +148,57 @@ namespace NumbersFun.Models
                             break;
                         case 3:
                             pos = (numberLength % 3) + 1;
-                            place = " Hundred ";
+                            
+                            if (number.StartsWith("1"))
+                            {
+                                place = " Hundred ";
+                            }
+                            else
+                            {
+                                place = " Hundreds ";
+                            }
                             break;
                         // case 4 -6 : thousands because thousand will be anohter 3 digital block
                         case 4:
                         case 5:
                         case 6:
                             pos = (numberLength % 4) + 1;
-                            place = " Thousand ";
+                            if (number.StartsWith("1"))
+                            {
+                                place = " Thousand ";
+                            }
+                            else
+                            {
+                                place = " Thousands ";
+                            }
                             break;
                         // case 7-9: Millions
                         case 7:
                         case 8:
                         case 9:
                             pos = (numberLength % 7) + 1;
-                            place = " Million ";
+                            if (number.StartsWith("1"))
+                            {
+                                place = " Million ";
+                            }
+                            else
+                            {
+                                place = " Millions ";
+                            }
                             break;
                         // case 10 - 12 billion
                         case 10:
                         case 11:
                         case 12:
                             pos = (numberLength % 10) + 1;
-                            place = " Billion ";
+                            if (number.StartsWith("1"))
+                            {
+                                place = " Billion ";
+                            }
+                            else
+                            {
+                                place = " Billions ";
+                            }
                             break;
                         //add extra case options for anything above Billion...    
                         default:
