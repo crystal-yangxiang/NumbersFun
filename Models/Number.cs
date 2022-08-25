@@ -123,13 +123,13 @@ namespace NumbersFun.Models
             try
             {
                 // eg.0120 check begin with zero or not   
-                bool beginsZero = false;
+                bool startWithZero = false;
                 bool isFinished = false;
-                double dblAmt = (Convert.ToDouble(number));
+                double num = (Convert.ToDouble(number));
 
-                if (dblAmt > 0)
+                if (num > 0)
                 {
-                    beginsZero = number.StartsWith("0");
+                    startWithZero = number.StartsWith("0");
 
                     int numberLength = number.Length;
                     //start position from 0

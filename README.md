@@ -55,13 +55,15 @@ Users should be able to:
 - Users click Home, Privacy and Contact in the navigation bar to navigate Home, Privacy, and Contact pages
 - Enter numercial input into textbox located in the concert of the web page
 - Click Convert button below the textbox
-- A string output parameter will be outputted below
+- A string output parameter will be outputted below eg. 0.53 output is Fifty Three Cents;
+														12.4 or 12.40, output is Twelve Dollars and Fourty Cents;
+														123456.78, output is One Hundred Twenty Three Thousand Four Hundred Fifty Six Dollars and Seventy Eight Cents;
+														0120, output is One Hundred Twenty.
 
 
 ### Continued development
 
-- Whole numbers 1-9 and tens numbers 10 - 90 can be converted into string output parameters.
-- Need to countinue developing functionlity as required.
+
 - Built and run Unit Testing for testing purpose.
 
 
