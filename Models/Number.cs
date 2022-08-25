@@ -203,6 +203,7 @@ namespace NumbersFun.Models
         {
             string decimals = "";
             string input = Math.Round(number, 2).ToString();
+            string strWords = "";
 
             if (input.Contains("."))
             {
@@ -212,7 +213,7 @@ namespace NumbersFun.Models
             }
 
             // Convert input into words. save it into strWords
-            string strWords = ConvertWholeNumber(input) + " Dollars";
+            strWords = ConvertWholeNumber(input) + " Dollars";
 
 
             if (decimals.Length > 0)
@@ -220,6 +221,14 @@ namespace NumbersFun.Models
                 // if there is any decimal part convert it to words and add it to strWords.
                 strWords += " and " + ConvertWholeNumber(decimals) + " Cents";
             }
+            if (input.StartsWith("0"))
+            {
+                strWords = ConvertWholeNumber(decimals) + " Cents";
+            }
+            //if (input.EndsWith("0"))
+            //{
+            //    strWords += " and " + tens(decimals) + " Cents";
+            //}
 
             return strWords;
         }
