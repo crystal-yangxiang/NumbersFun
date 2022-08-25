@@ -26,10 +26,10 @@ namespace NumbersFun.Controllers
         }
 
         [Route("/numberPage")]
-        public IActionResult ConvertWholeNumber(string number)
+        public IActionResult ConvertWholeNumber(double number)
         {
             Number newNum = new Number();
-            newNum.EndWord = Number.ConvertWholeNumber(number);
+            newNum.EndWord = Number.Decimal(number);
             return View(newNum);
             
         }

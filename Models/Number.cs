@@ -50,7 +50,7 @@ namespace NumbersFun.Models
         public static string tens(string number)
         {
             int num = Convert.ToInt32(number);
-            string word = null;
+            string word = "";
             switch (num)
             {
                 case 10:
@@ -199,45 +199,30 @@ namespace NumbersFun.Models
             return word.Trim();
         }
 
-       public static string decimalValue(string number)
+        public static string Decimal(double number)
         {
-            string wholeNumber = number;
-            string andString = null;
-            string pointString = null;
-            string points= null;
-            string text = "";
+            string decimals = "";
+            string input = Math.Round(number, 2).ToString();
 
-            int afterPoint = number.IndexOf(".");
-            if (afterPoint > 0 )
+            if (input.Contains("."))
             {
-                wholeNumber = number.Substring(0, afterPoint);
-                points = number.Substring(afterPoint + 1);
-                if (Convert.ToInt32(points)>0)
-                {
-                    andString = "and";
-                }
+                decimals = input.Substring(input.IndexOf(".") + 1);
+                // remove decimal part from input
+                input = input.Remove(input.IndexOf("."));
             }
-            text = string.Format("{0}{1}{2}", ConvertWholeNumber(wholeNumber), andString, pointString);
-            return text;
-            
-        }
 
-        public static string ConvertFullNumber(string number)
-        {
-            string text = "";
-            string digits = null;
-            string val = null;
+            // Convert input into words. save it into strWords
+            string strWords = ConvertWholeNumber(input) + " Dollars";
 
-            for (int i = 0; i < number.Length; i++)
+
+            if (decimals.Length > 0)
             {
-                digits = number[i].ToString();
-                if (digits.Equals("0"))
-                {
-                    val = "Zero";
-                }
+                // if there is any decimal part convert it to words and add it to strWords.
+                strWords += " and " + ConvertWholeNumber(decimals) + " Cents";
             }
+
+            return strWords;
         }
-        
     }
 }
 
