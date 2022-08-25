@@ -202,34 +202,34 @@ namespace NumbersFun.Models
         public static string Decimal(double number)
         {
             string decimals = "";
-            string input = Math.Round(number, 2).ToString();
+            string input = Math.Round(number, 2).ToString("0.00");
             string strWords = "";
 
             if (input.Contains("."))
             {
                 decimals = input.Substring(input.IndexOf(".") + 1);
-                // remove decimal part from input
                 input = input.Remove(input.IndexOf("."));
+                
             }
-
-            // Convert input into words. save it into strWords
             strWords = ConvertWholeNumber(input) + " Dollars";
+            
 
-
-            if (decimals.Length > 0)
+            if (decimals.Length > 0 )
             {
-                // if there is any decimal part convert it to words and add it to strWords.
                 strWords += " and " + ConvertWholeNumber(decimals) + " Cents";
             }
+            //input number does contain "." which means whole Numbers without decimal
+            if (number.ToString().IndexOf(".") == -1)
+            {
+                strWords = ConvertWholeNumber(input) + " Dollars";
+            }
+            
             if (input.StartsWith("0"))
             {
                 strWords = ConvertWholeNumber(decimals) + " Cents";
             }
-            //if (input.EndsWith("0"))
-            //{
-            //    strWords += " and " + tens(decimals) + " Cents";
-            //}
-
+            
+            
             return strWords;
         }
     }
