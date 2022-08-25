@@ -211,24 +211,56 @@ namespace NumbersFun.Models
                 input = input.Remove(input.IndexOf("."));
                 
             }
-            strWords = ConvertWholeNumber(input) + " Dollars";
-            
-
-            if (decimals.Length > 0 )
+            if (ConvertWholeNumber(input) == "One")
             {
-                strWords += " and " + ConvertWholeNumber(decimals) + " Cents";
+                strWords = ConvertWholeNumber(input) + " Dollar";
             }
-            //input number does contain "." which means whole Numbers without decimal
-            if (number.ToString().IndexOf(".") == -1)
+            else
             {
                 strWords = ConvertWholeNumber(input) + " Dollars";
             }
             
+            
+             
+           
+            // if decimal or cent part in the decimal whole numberequals one (#.01) # can be any number,
+            if (decimals.Length > 0 && ConvertWholeNumber(decimals) == "One")
+            {
+                // strWords returns .... and one cent eg. 3.01 return three dollars and one cent
+                strWords += " and " + ConvertWholeNumber(decimals) + " Cent";
+            }
+            else /*(decimals.Length > 0 && ConvertWholeNumber(decimals) != "One")*/
+            {
+                // else return cents
+                strWords += " and " + ConvertWholeNumber(decimals) + " Cents";
+            }
+            //input number does contain "." which means it is a whole Number without decimal
+            // AND start with "one"
+            if (number.ToString().IndexOf(".") == -1 && ConvertWholeNumber(input) == "One")
+            {
+                // return strWord with singural dollar 
+                strWords = ConvertWholeNumber(input) + " Dollar";
+            }
+            // else the rest situations, strWords return plural dollars
+            else if (number.ToString().IndexOf(".") == -1)
+            {
+                strWords = ConvertWholeNumber(input) + " Dollars";
+            }
+
+            // if input decimal number start with 0, such as 0.53 or 0.03
             if (input.StartsWith("0"))
             {
+                // strWords only return cents without dollar unit eg. fifty three cents or 3 cents
                 strWords = ConvertWholeNumber(decimals) + " Cents";
             }
-            
+
+            //if input decimal number start with 0
+            //AND input decimal number equal 0.01 (0.01 will be the ONLY case)
+            if (input.StartsWith("0") && number.ToString() == "0.01")
+            {
+                // strWords return one cent
+                strWords = ConvertWholeNumber(decimals) + " Cent";
+            }
             
             return strWords;
         }
