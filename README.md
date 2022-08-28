@@ -10,6 +10,7 @@
   - [Built with](#built-with)
   - [Deployment](#deployment)
   - [Interact with solution](#interact-with-solution)
+  - [NUnit Tests](#nunit-tests)
   - [Continued development](#continued-development)
 - [Author](#author)
 
@@ -60,7 +61,9 @@ Users should be able to:
 														123456.78, output is One Hundred Twenty Three Thousand Four Hundred Fifty Six Dollars and Seventy Eight Cents;
 														0120, output is One Hundred Twenty.
 
-
+													
+### NUnit Tests
+![NUnit Test]()
 ### Continued development
 
 
