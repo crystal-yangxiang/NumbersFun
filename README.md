@@ -11,7 +11,6 @@
   - [Deployment](#deployment)
   - [Interact with solution](#interact-with-solution)
   - [NUnit Tests](#nunit-tests)
-  - [Continued development](#continued-development)
 - [Author](#author)
 
 
@@ -44,12 +43,12 @@ Users should be able to:
 - [React](https://reactjs.org/) - JS library
 - [jQuery.js](https://nextjs.org/) - React framework
 
+
 ### Deployment
 
 - Deployed and hosted by Azure App Services
 
 - URL: (https://numbersfun.azurewebsites.net/)
-
 
 ### Interact with solution
 
@@ -63,18 +62,16 @@ Users should be able to:
 
 													
 ### NUnit Tests
+
+- Unit tests is built and pass all cases
 ![NUnitTest](https://user-images.githubusercontent.com/93811704/187062631-cda98389-9bea-4de1-8864-f837664af842.png)
-
-### Continued development
-
-
-- Built and run Unit Testing for testing purpose.
-
 
 
 ## Author
 
-- [Yang Xiang] 
+- Yang Xiang
+- Project Link: https://github.com/crystal-yangxiang/NumbersFun
+- Email: yangxiangjob@gmail.com
 
 
 
